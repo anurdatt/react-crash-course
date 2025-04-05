@@ -1,28 +1,27 @@
-import PostList from "./components/PostList"; 
-import MainHeader from "./components/MainHeader";
-import { AppProvider } from "./components/AppProvided";
-import { useState } from "react";
+import PostList from './components/PostList'
+import MainHeader from './components/MainHeader'
+import { CounterProvider } from './components/CounterProvider'
+import { useState } from 'react'
 
 function App() {
-
-  const [modalIsVisible, setModalIsVisible] = useState(false);
+  const [modalIsVisible, setModalIsVisible] = useState(false)
 
   function hideModalHandler(event) {
-    setModalIsVisible(false);
+    setModalIsVisible(false)
   }
 
   function showModalHandler(event) {
-    setModalIsVisible(true);
+    setModalIsVisible(true)
   }
 
   return (
-    <AppProvider>
+    <CounterProvider>
       <MainHeader onCreatePost={showModalHandler} />
       <main>
         <PostList isPosting={modalIsVisible} onStopPosting={hideModalHandler} />
       </main>
-    </AppProvider>
-  );
+    </CounterProvider>
+  )
 }
 
-export default App;
+export default App

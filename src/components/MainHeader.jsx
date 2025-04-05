@@ -1,10 +1,10 @@
-import { MdPostAdd, MdMessage } from "react-icons/md";
-import { AppContext } from "./AppProvided";
-import classes from "./MainHeader.module.css";
-import { useContext } from "react";
+import { MdPostAdd, MdMessage } from 'react-icons/md'
+import { CounterContext } from './CounterProvider'
+import classes from './MainHeader.module.css'
+import { useContext } from 'react'
 
 function MainHeader({ onCreatePost }) {
-  const { state } = useContext(AppContext);
+  const { state } = useContext(CounterContext)
   return (
     <header className={classes.header}>
       <h1 className={classes.logo}>
@@ -19,7 +19,7 @@ function MainHeader({ onCreatePost }) {
         </button>
       </p>
     </header>
-  );
+  )
 }
 
-export default MainHeader;
+export default MainHeader
